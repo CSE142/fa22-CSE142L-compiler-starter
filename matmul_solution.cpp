@@ -8,7 +8,7 @@
 extern "C" void matrix_product(Matrix * c, Matrix * a, Matrix * b) {
     for(uint i = 0; i < a->rows; i++) {
         for(uint j = 0; j < b->columns; j++) {
-        matrix_write(c, j, i, 0);
+            matrix_write(c, j, i, 0);
             for(uint k = 0; k < a->columns; k++) {
                 matrix_write(c, j, i,
                          matrix_read(c, j, i) +
@@ -25,7 +25,7 @@ extern "C" void matrix_product(Matrix * c, Matrix * a, Matrix * b) {
 extern "C" void matrix_product_1(Matrix * c, Matrix * a, Matrix * b) {
     for(uint i = 0; i < a->rows; i++) {
         for(uint j = 0; j < b->columns; j++) {
-        matrix_write(c, j, i, 0);
+            matrix_write(c, j, i, 0);
             for(uint k = 0; k < a->columns; k++) {
                 matrix_write(c, j, i,
                          matrix_read(c, j, i) +
@@ -39,7 +39,7 @@ extern "C" void matrix_product_1(Matrix * c, Matrix * a, Matrix * b) {
 extern "C" void matrix_product_2(Matrix * c, Matrix * a, Matrix * b) {
     for(uint i = 0; i < a->rows; i++) {
         for(uint j = 0; j < b->columns; j++) {
-        matrix_write(c, j, i, 0);
+            matrix_write(c, j, i, 0);
             for(uint k = 0; k < a->columns; k++) {
                 matrix_write(c, j, i,
                          matrix_read(c, j, i) +
@@ -53,7 +53,7 @@ extern "C" void matrix_product_2(Matrix * c, Matrix * a, Matrix * b) {
 extern "C" void matrix_product_3(Matrix * c, Matrix * a, Matrix * b) {
     for(uint i = 0; i < a->rows; i++) {
         for(uint j = 0; j < b->columns; j++) {
-        matrix_write(c, j, i, 0);
+            matrix_write(c, j, i, 0);
             for(uint k = 0; k < a->columns; k++) {
                 matrix_write(c, j, i,
                          matrix_read(c, j, i) +
@@ -67,7 +67,7 @@ extern "C" void matrix_product_3(Matrix * c, Matrix * a, Matrix * b) {
 extern "C" void matrix_product_4(Matrix * c, Matrix * a, Matrix * b) {
     for(uint i = 0; i < a->rows; i++) {
         for(uint j = 0; j < b->columns; j++) {
-        matrix_write(c, j, i, 0);
+            matrix_write(c, j, i, 0);
             for(uint k = 0; k < a->columns; k++) {
                 matrix_write(c, j, i,
                          matrix_read(c, j, i) +
@@ -81,7 +81,7 @@ extern "C" void matrix_product_4(Matrix * c, Matrix * a, Matrix * b) {
 extern "C" void matrix_product_5(Matrix * c, Matrix * a, Matrix * b) {
     for(uint i = 0; i < a->rows; i++) {
         for(uint j = 0; j < b->columns; j++) {
-        matrix_write(c, j, i, 0);
+            matrix_write(c, j, i, 0);
             for(uint k = 0; k < a->columns; k++) {
                 matrix_write(c, j, i,
                          matrix_read(c, j, i) +
@@ -92,4 +92,4 @@ extern "C" void matrix_product_5(Matrix * c, Matrix * a, Matrix * b) {
     }
 }
 
-// Cfiddle-signature=f7f3905d36f394866657379140cf5196
+// Cfiddle-signature=36ce434e433598957f27afd225183842
