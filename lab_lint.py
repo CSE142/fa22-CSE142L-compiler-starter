@@ -8,9 +8,12 @@ import re
 @click.argument("source", required=True)
 def lint(source=None):
     preprocessed_source = strip_preprocessed_output(build(source)[0].preprocessed())
-    raw_source = build(source)[0].source()
+#    with open("out", "w") as out:
+#        out.write("\n".join(preprocessed_source))
+        
+#     raw_source = build(source)[0].source()
 
-    forbidden = [ "inline", "__attribute__", "__asm__",  "pthread", "omp", "<thread>", "std::thread", "clone", "fork"]
+    forbidden = [ "inline", "__attribute__", "__asm__",  "pthread", "omp", "<thread>", "std::thread", "clone", "fork", "thread"]
     forbidden_patterns = [(x, f"(\W|^){x}(\W|$)") for x in forbidden]
     
     for line in preprocessed_source:
@@ -24,13 +27,13 @@ def strip_preprocessed_output(output):
     lines = output.split("\n")
     in_file = False
     output = []
-    pattern = r'# (\d+) \"([\w\.\-\/]+)\".*'
+    pattern = r'# (\d+) \"([\w\d\.\_\-\/\+]+)\".*'
 
     m = re.match(pattern, lines[0])
     if m:
         this_file = m.group(2)
     else:
-        raise click.ClickException("Output doesn't start with line number directive")
+        raise click.ClickException("Output doesn't start with line number directive.  This is a bug in the lab.  Report it to the course staff.")
     
     for l in lines[1:]:
         m = re.search(pattern, l)

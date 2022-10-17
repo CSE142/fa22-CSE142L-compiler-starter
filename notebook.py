@@ -27,9 +27,9 @@ def stacked(function, *argc, **kwargs):
 def src_vs_asm(exe, function):
     compare([exe.source(function),exe.asm(function)])
 
-def analyze(exe, function):
+def analyze(exe, function, **kwargs):
     compare([exe.source(function),exe.asm(function)])
-    display(exe.cfg(function))
+    display(exe.cfg(function, **kwargs))
 
 def optimization_example(code, function, cfg=False, *argc, OPTIMIZE=None, DEBUG_FLAGS=None, **kwargs):
     if OPTIMIZE is None:
