@@ -34,6 +34,7 @@ regressions.json: run_tests.exe
 autograde.csv: matmul_solution.cpp matmul.cpp canary.cpp
 	./lab_lint.py matmul_solution.cpp
 	./run_bench.py --results $@ --source matmul_solution.cpp --optimize "-O0"
+	rm -rf build run_tests.exe
 
 .PHONY: clean
 clean:
