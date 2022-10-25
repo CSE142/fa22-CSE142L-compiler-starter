@@ -3,7 +3,7 @@ default:
 
 ENCRYPTED_FILES=hidden_tests.cpp autograde_seed
 PRIVATE_FILES=Lab.key.ipynb admin .git matmul_fast.cpp $(ENCRYPTED_FILES)
-STUDENT_EDITABLE_FILES=matmul_solution.cpp
+STUDENT_EDITABLE_FILES=matmul_solution.cpp some_data
 
 
 .PHONY: create-labs
